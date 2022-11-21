@@ -6,19 +6,19 @@
 */
 #include "macro.h"
 #include "macroo.h"
+void my_putstr(char *s);
 int main(int ac, char **av)
 {
 
     int i = 0;
     star *element = starter(av[1]);
-    printf("%d", element->l);
     star *gege = element;
-    int l = element->l;
+    int l = element->l, t = l + 1, p = element->c + 1;
     copy *copy = bsq(gege);
     char **ag = element->av;
-    char **ad; ad = malloc(sizeof(char*) * 2000);
+    char **ad; ad = malloc(sizeof(char*) * t);
     while (i < element->l) {
-        ad[i] = malloc(sizeof(char) * element->c + 2); i++;
+        ad[i] = malloc(sizeof(char) * p); i++;
     }
     i = 0;
     while (ag[i] != NULL) {
@@ -37,6 +37,6 @@ int main(int ac, char **av)
     }
     i = 0;
     while (ad[i] != NULL) {
-        printf("%s", ad[i]); i++;
+        my_putstr(ad[i]); i++;
     }
 }

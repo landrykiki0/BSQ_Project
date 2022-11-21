@@ -16,7 +16,8 @@ char *string(char *str)
 {
     char *src; struct stat test;
     stat(str, &test);
-    src = malloc(sizeof(char) * test.st_size); int fd = open(str, O_RDONLY);
+    int p = test.st_size + 1;
+    src = malloc(sizeof(char) * p); int fd = open(str, O_RDONLY);
     int g = read(fd, src, test.st_size); src[g] = '\0';
     return src;
 }
@@ -43,11 +44,12 @@ int length(char *src)
 
 star *starter(char *str)
 {
-    char *src = string(str) ; int p = my_getnbr(src); char **av;
-    av = malloc(sizeof(char *) * p); int i = start(src), g = length(src);
+    char *src = string(str) ; int p = my_getnbr(src); char **av; int v = p + 1;
+    av = malloc(sizeof(char *) * v); int i = start(src), g = length(src);
     int c = 0, j = 0, z = 0; star *star; star = malloc(sizeof(*star));
+    int t = g + 1;
     while (c < p) {
-        av[c] = malloc(sizeof(char) * g);
+        av[c] = malloc(sizeof(char) * t);
         c++;
     }
     while (src[i] != '\0') {
@@ -57,7 +59,7 @@ star *starter(char *str)
         } else {
             av[j][z] = src[i]; i++; z++;
         }
-    }
+        }
     star->av = av; star->l = p; star->c = g;
     return star;
 }
