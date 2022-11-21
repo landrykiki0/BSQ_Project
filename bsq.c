@@ -7,6 +7,14 @@
 #include "macro.h"
 #include "macroo.h"
 #include <stdlib.h>
+
+int counter(int *a, char c)
+{
+    if (c == '.') {
+        (*a) = (*a) + 1;
+    }
+}
+
 int checker(star *starp, star *element, copy *copy, int n)
 {
     int i = starp->l, j = starp->c; char **av = starp->av;
@@ -14,19 +22,14 @@ int checker(star *starp, star *element, copy *copy, int n)
     int k = i, u = j;
     while (i < l && l <= element->l) {
         while (j < m && m <= element->c) {
-            if (av[i][j] == '.') {
-                a++;
-            }
+            counter(&a, av[i][j]);
             j++;
         }
-        j = starp->c;
-        i++;
+        j = starp->c; i++;
     }
     if (a == n * n) {
-        if(n > copy->n) {
-            copy->i = k;
-            copy->j = u;
-            copy->n = n;
+        if (n > copy->n) {
+            copy->i = k; copy->j = u; copy->n = n;
         }
         checker(starp, element, copy, n + 1);
     } else {
