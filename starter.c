@@ -46,8 +46,11 @@ star *starter(char *str)
 {
     char *src = string(str) ; int p = my_getnbr(src); char **av; int v = p + 1;
     av = malloc(sizeof(char *) * v); int i = start(src), g = length(src);
-    int c = 0, j = 0, z = 0; star *star; star = malloc(sizeof(*star));
-    int t = g + 1;
+    int c = 0, j = 0, z = 0, t = g + 1;
+    star *star; star = malloc(sizeof(*star));
+    if (error(src, p, g) == 84) {
+        star->l = -84; return star;
+    }
     while (c < p) {
         av[c] = malloc(sizeof(char) * t);
         c++;
@@ -59,7 +62,6 @@ star *starter(char *str)
         } else {
             av[j][z] = src[i]; i++; z++;
         }
-        }
-    star->av = av; star->l = p; star->c = g;
-    return star;
+    }
+    star->av = av; star->l = p; star->c = g; return star;
 }

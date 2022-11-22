@@ -15,6 +15,9 @@ struct star {
 };
 typedef struct star star;
 copy *bsq(star *element);
+int error2(char *str);
 int domino(int a, int b, copy *copy);
+int error(char *str, int l, int c);
+int my_str_isnum(char const *str);
 star *starter(char *str);
 #endif

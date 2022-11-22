@@ -26,7 +26,9 @@ int copier2(int h, char *d, char *g)
 
 int main(int ac, char **av)
 {
-    star *element = starter(av[1]); star *gege = element; int i = 0, u = 0;
+    if (error2(av[1]) == 84) return 84;
+    star *element = starter(av[1]);
+    if (element->l == -84) return 84; star *gege = element; int i = 0, u = 0;
     int l = element->l, t = l + 1, p = element->c + 1; copy *copy = bsq(gege);
     char **ag = element->av, **ad; ad = malloc(sizeof(char*) * t); int w = 0;
     while (u < element->l) {

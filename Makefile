@@ -11,7 +11,9 @@ SRC	=	bsq.c	\
 		my_getnbr.c	\
 		my_putstr.c	\
 		my_strlen.c	\
-		starter.c
+		starter.c	\
+		error.c	\
+		my_str_isnum.c
 
 OBJ	=	$(SRC:.c=.o)
 
