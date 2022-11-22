@@ -12,6 +12,34 @@
 #include "macro.h"
 #include "macroo.h"
 
+star *starter2(int n, char *str)
+{
+    star *star; char **av;
+    star = malloc(sizeof(*star));
+    int p = n + 1;
+    av = malloc(sizeof(char *) * p);
+    int i = 0;
+    while (i < n) {
+        av[i] = str;
+        i++;
+    }
+    star->av = av; star->l = n; star->c = my_strlen(str);
+    return star;
+}
+
+int checker2(char *str)
+{
+    int i = 0;
+    while (str[i] != '\0') {
+        if (str[i] != 'o' && str[i] != '.' &&
+            str[i] != '\n') {
+            return 84;
+        }
+        i++;
+    }
+    return 1;
+}
+
 int error2(char *str)
 {
     int n = 0, i = 0;
