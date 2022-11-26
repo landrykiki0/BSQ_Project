@@ -35,7 +35,7 @@ int main(int ac, char **av)
 {
     star *element;
     if (ac == 3 && my_str_isnum(av[1]) == 1 && checker2(av[2]) == 1) {
-        element = starter2(my_getnbr(av[1]), av[2]);
+    element = starter2(my_getnbr(av[1]), av[2]);
     } else if (ac == 2 && error2(av[1]) != 84) element = starter(av[1]);
     else { return 84; }
     if (element->l == -84) return 84; star *gege = element; int i = 0, u = 0;

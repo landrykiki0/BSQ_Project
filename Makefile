@@ -22,7 +22,7 @@ NAME    =       bsq
 all:    $(NAME)
 
 $(NAME):        $(OBJ)
-		gcc -o $(NAME) $(OBJ)
+		gcc -o $(NAME) $(OBJ) -g3
 
 clean:
 	rm -rf $(OBJ)

@@ -12,18 +12,51 @@
 #include "macro.h"
 #include "macroo.h"
 
+char *generator(char *str, int g , int n)
+{
+    int j = 1, v = 0; int q = g + 1;
+    int k = my_strlen(str);
+    char *svr; svr = malloc(sizeof(char*) * (n + 1));
+    int i = 0; int m = n / g; int b = 1;
+    int c = 0; int z = 0; int h = 0; j = 0;
+    while (j < n) {
+        if (b == (g + 1)) {
+            b = 1;
+        }
+        if (b == g) {
+            svr[j] = str[0];
+            j++; b++;
+        }
+        if (b != g && b != g + 1) {
+            svr[j] = str[b];
+            j++; b++;
+        }
+    }
+    svr[j] = '\0';
+    return svr;
+}
+
 star *starter2(int n, char *str)
 {
-    star *star; char **av;
+    star *star; char **av; int g = my_strlen(str);
     star = malloc(sizeof(*star));
-    int p = n + 1;
+    int p = n + 1; int j = 0;
     av = malloc(sizeof(char *) * p);
-    int i = 0;
-    while (i < n) {
-        av[i] = str;
-        i++;
+    int i = 0; int m = n / g; int b = 0;
+    int c = 0; int z = 0; int h = 0;char *svr;
+    svr = malloc(sizeof(char) * (n + 1));
+    while (j < n) {
+        if (b == g) {
+            b = 0;
+        } else {
+            svr[j] = str[b]; j++; b++;
+        }
     }
-    star->av = av; star->l = n; star->c = my_strlen(str);
+    svr[j] = '\0';
+    while (i < n) {
+        av[i] = svr; i++; svr = generator(svr, g, n);
+    }
+    star->av = av; star->l = n; star->c = n;
     return star;
 }
 
