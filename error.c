@@ -12,49 +12,24 @@
 #include "macro.h"
 #include "macroo.h"
 
-char *generator(char *str, int g , int n)
+void chill(int g, int *p)
 {
-    int j = 1, v = 0; int q = g + 1;
-    int k = my_strlen(str);
-    char *svr; svr = malloc(sizeof(char*) * (n + 1));
-    int i = 0; int m = n / g; int b = 1;
-    int c = 0; int z = 0; int h = 0; j = 0;
-    while (j < n) {
-        if (b == (g + 1)) {
-            b = 1;
-        }
-        if (b == g) {
-            svr[j] = str[0];
-            j++; b++;
-        }
-        if (b != g && b != g + 1) {
-            svr[j] = str[b];
-            j++; b++;
-        }
-    }
-    svr[j] = '\0';
-    return svr;
+    if (*p == g) *p = 0;
 }
 
 star *starter2(int n, char *str)
 {
-    star *star; char **av; int g = my_strlen(str);
-    star = malloc(sizeof(*star));
-    int p = n + 1; int j = 0;
-    av = malloc(sizeof(char *) * p);
-    int i = 0; int m = n / g; int b = 0;
-    int c = 0; int z = 0; int h = 0;char *svr;
-    svr = malloc(sizeof(char) * (n + 1));
-    while (j < n) {
-        if (b == g) {
-            b = 0;
-        } else {
-            svr[j] = str[b]; j++; b++;
-        }
+    star *star; char **av; star = malloc(sizeof(*star));
+    av = malloc(sizeof(char *) * (n + 1));
+    int p = 0; int g = my_strlen(str);
+    for (int i = 0; i < n; i++) {
+        av[i] = malloc(sizeof(char) * (n + 1));
     }
-    svr[j] = '\0';
-    while (i < n) {
-        av[i] = svr; i++; svr = generator(svr, g, n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            av[i][j] = str[p]; p++;
+            chill(g, &p);
+        }
     }
     star->av = av; star->l = n; star->c = n;
     return star;
