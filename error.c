@@ -1,9 +1,3 @@
-/*
-** EPITECH PROJECT, 2022
-** error.c
-** File description:
-** error.c
-*/
 #include <sys/stat.h>
 #include <stdlib.h>
 #include <stdio.h>

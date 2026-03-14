@@ -1,9 +1,3 @@
-/*
-** EPITECH PROJECT, 2022
-** bsq.c
-** File description:
-** bsq.c
-*/
 #include "macro.h"
 #include "macroo.h"
 #include <stdlib.h>

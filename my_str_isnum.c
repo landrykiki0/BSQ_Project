@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2022
-** my_str_isnum.C
-** File description:
-** my_str_isnum.c
-*/
-
 #include <stdio.h>
 int my_str_isnum(char const *str)
 {

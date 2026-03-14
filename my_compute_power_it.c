@@ -1,10 +1,3 @@
-/*
-** EPITECH PROJECT, 2022
-** my_compute_power_it.c
-** File description:
-** my_compute_power_it.c
-*/
-
 #include <stdio.h>
 #include <unistd.h>
 int my_putchar(char c)

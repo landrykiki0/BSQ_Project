@@ -1,9 +1,3 @@
-/*
-** EPITECH PROJECT, 2022
-** starter.c
-** File description:
-** starter.c
-*/
 #include <sys/stat.h>
 #include <stdlib.h>
 #include <stdio.h>

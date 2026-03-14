@@ -1,9 +1,3 @@
-##
-## EPITECH PROJECT, 2022
-## Makefile
-## File description:
-## Makefile
-##
 
 SRC	=	bsq.c	\
 		main.c	\

@@ -1,9 +1,3 @@
-/*
-** EPITECH PROJECT, 2022
-** my_getnbr.c
-** File description:
-** my_getnbr.c
-*/
 #include <stdio.h>
 #include <unistd.h>
 

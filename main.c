@@ -1,9 +1,3 @@
-/*
-** EPITECH PROJECT, 2022
-** main.c
-** File description:
-** main.c
-*/
 #include "macro.h"
 #include "macroo.h"
 void my_putstr(char *s);

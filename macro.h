@@ -1,9 +1,3 @@
-/*
-** EPITECH PROJECT, 2022
-** macro.h
-** File description:
-** macro.h
-*/
 #ifndef MACRO_H
     #define MACRO_H
     #include "macroo.h"
